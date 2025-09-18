@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --bg: #f9f9fb;
+      --text: #333;
+      --card-bg: #ffffff;
+      --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --transition: all 0.4s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 80px 20px 60px;
+      animation: fadeInDown 1s ease;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      font-weight: 400;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      animation: fadeInUp 1s ease;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+      transition: var(--transition);
+      transform: translateY(0);
+      opacity: 0;
+      animation: fadeInCard 0.8s ease forwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.2s; }
+    .project-card:nth-child(2) { animation-delay: 0.4s; }
+    .project-card:nth-child(3) { animation-delay: 0.6s; }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-card-content {
+      padding: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .project-card a:hover {
+      color: #0d6efd;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #eee;
+      font-size: 0.95rem;
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInCard {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Frontend Developer • UI/UX Enthusiast • Creative Coder</p>
+  </header>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p style="max-width: 700px; margin: auto; text-align: center; font-size: 1.05rem;">
+      I'm a creative developer who loves to build modern web apps and elegant user interfaces.
+      Whether it's crafting a landing page or a full-stack app, I bring passion and performance to the table.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">My Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project One" />
+        <div class="project-card-content">
+          <h3>Project One</h3>
+          <p>This app helps users manage their daily tasks efficiently using a clean and simple UI.</p>
+          <a href="#">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project Two" />
+        <div class="project-card-content">
+          <h3>Project Two</h3>
+          <p>A modern blog platform built with React and Markdown for developers who write.</p>
+          <a href="#">View Project →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x200" alt="Project Three" />
+        <div class="project-card-content">
+          <h3>Project Three</h3>
+          <p>A portfolio CMS that lets users create and manage their project showcase with ease.</p>
+          <a href="#">View Project →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Your Name — <a href="mailto:your@email.com">Contact Me</a></p>
+  </footer>
+</body>
+
+</html>
